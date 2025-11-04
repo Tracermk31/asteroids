@@ -36,7 +36,7 @@ def game_loop():
                 return
             for shot in shots:
                 if shot.check_for_collision(asteroid):
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
         pygame.display.flip()
         delta_time = (game_clock.tick(60)/1000)
