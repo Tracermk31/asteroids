@@ -5,6 +5,9 @@ from player import Player
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 game_clock = pygame.time.Clock()
+updatables = pygame.sprite.Group()
+drawables = pygame.sprite.Group()
+Player.containers = (updatables, drawables)
 player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
 
 def game_loop():
