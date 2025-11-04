@@ -15,8 +15,9 @@ def game_loop():
                 return
         screen.fill((0,0,0))
         player.draw(screen)
+        player.update(delta_time)
         pygame.display.flip()
-        delta_time += (game_clock.tick(60)/1000)
+        delta_time = (game_clock.tick(60)/1000)
 
 def main():
     print("Starting Asteroids!")
