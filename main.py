@@ -26,6 +26,10 @@ def game_loop():
         for drawable in drawables:
             drawable.draw(screen)
         updatables.update(delta_time)
+        for asteroid in asteroids:
+            if asteroid.check_for_collision(player):
+                print("Game over!")
+                return
         pygame.display.flip()
         delta_time = (game_clock.tick(60)/1000)
 
