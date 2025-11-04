@@ -1,7 +1,7 @@
 import pygame
 from circleshape import CircleShape
 
-def Asteroid(CircleShape):
+class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
 
