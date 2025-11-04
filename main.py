@@ -34,6 +34,10 @@ def game_loop():
             if asteroid.check_for_collision(player):
                 print("Game over!")
                 return
+            for shot in shots:
+                if shot.check_for_collision(asteroid):
+                    asteroid.kill()
+                    shot.kill()
         pygame.display.flip()
         delta_time = (game_clock.tick(60)/1000)
 
@@ -42,7 +46,6 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     game_loop()
-
 
 if __name__ == "__main__":
     main()
